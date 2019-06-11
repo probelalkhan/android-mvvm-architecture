@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:background="#E2E2E2"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth.SignupActivity">
+
+
+    <RelativeLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:layout_marginTop="45dp"
+                android:id="@+id/image_view_logo"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_app_logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+        />
+
+        <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_below="@id/image_view_logo"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:text="architect your app with"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" app:fontFamily="cursive"
+                    android:textColor="#465A61"/>
+
+            <TextView
+                    android:layout_gravity="center_horizontal"
+                    android:text="MVVM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    app:fontFamily="casual" android:textStyle="bold" android:textAllCaps="false"
+                    android:typeface="monospace" android:textColor="#969EEE"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:padding="18dp"
+                android:background="#ffffff"
+                android:layout_below="@id/linearLayout1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <EditText
+                    android:hint="Belal Khan"
+                    android:inputType="textEmailAddress"
+                    android:drawablePadding="16dp"
+                    android:drawableLeft="@drawable/ic_name"
+                    android:background="@drawable/edit_text_round_gray_background"
+                    android:layout_width="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_height="match_parent"/>
+
+            <EditText
+                    android:hint="belal@gmail.com"
+                    android:inputType="textEmailAddress"
+                    android:drawablePadding="16dp"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:background="@drawable/edit_text_round_gray_background"
+                    android:layout_width="match_parent"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_height="match_parent"/>
+
+            <EditText
+                    android:inputType="textPassword"
+                    android:hint="password"
+                    android:drawablePadding="16dp"
+                    android:drawableLeft="@drawable/ic_lock"
+                    android:background="@drawable/edit_text_round_gray_background"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:layout_height="match_parent"/>
+
+            <EditText
+                    android:inputType="textPassword"
+                    android:hint="confirm password"
+                    android:drawablePadding="16dp"
+                    android:drawableLeft="@drawable/ic_lock"
+                    android:background="@drawable/edit_text_round_gray_background"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginBottom="12dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="Forget Password?"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <Button
+                    android:layout_gravity="center_horizontal"
+                    android:textAllCaps="false"
+                    android:text="Sign In"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_marginTop="12dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_below="@id/linearLayout2"
+                android:textAlignment="center"
+                android:text="Don't have an account?\nSign Up Here"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progress_bar"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
