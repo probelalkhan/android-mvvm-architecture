@@ -13,6 +13,7 @@ import net.simplifiedcoding.mvvmsampleapp.data.db.entities.User
 import net.simplifiedcoding.mvvmsampleapp.databinding.ActivityLoginBinding
 import net.simplifiedcoding.mvvmsampleapp.util.hide
 import net.simplifiedcoding.mvvmsampleapp.util.show
+import net.simplifiedcoding.mvvmsampleapp.util.snackbar
 import net.simplifiedcoding.mvvmsampleapp.util.toast
 
 
@@ -35,12 +36,12 @@ class LoginActivity : AppCompatActivity(), AuthListener {
 
     override fun onSuccess(user: User) {
         progress_bar.hide()
-        toast("${user.name} is Logged In")
+        root_layout.snackbar("${user.name} is Logged In")
     }
 
     override fun onFailure(message: String) {
         progress_bar.hide()
-        toast(message)
+        root_layout.snackbar(message)
     }
 
 }
