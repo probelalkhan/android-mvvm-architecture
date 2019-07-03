@@ -116,6 +116,7 @@
             <TextView
                     android:layout_marginTop="12dp"
                     android:textColor="@color/colorPrimary"
+                    android:onClick="@{viewmodel::onSignup}"
                     android:layout_centerHorizontal="true"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:layout_below="@id/linearLayout2"
