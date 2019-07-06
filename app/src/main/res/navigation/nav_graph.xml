@@ -6,5 +6,5 @@
 
     <fragment android:id="@+id/profileFragment"
               android:name="net.simplifiedcoding.mvvmsampleapp.ui.home.profile.ProfileFragment"
-              android:label="profile_fragment" tools:layout="@layout/profile_fragment"/>
+              android:label="Profile" tools:layout="@layout/profile_fragment"/>
 </navigation>
