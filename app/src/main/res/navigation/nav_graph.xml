@@ -7,4 +7,7 @@
     <fragment android:id="@+id/profileFragment"
               android:name="net.simplifiedcoding.mvvmsampleapp.ui.home.profile.ProfileFragment"
               android:label="Profile" tools:layout="@layout/profile_fragment"/>
+    <fragment android:id="@+id/quotesFragment"
+              android:name="net.simplifiedcoding.mvvmsampleapp.ui.home.quotes.QuotesFragment"
+              android:label="Quotes" tools:layout="@layout/quotes_fragment"/>
 </navigation>
