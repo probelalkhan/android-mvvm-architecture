@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="quote"
+                  type="net.simplifiedcoding.mvvmsampleapp.data.db.entities.Quote"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:id="@+id/quote"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{`'`+quote.quote+`'`}"
+                    tools:text="Success doesn’t just find you. You have to go out and get it."/>
+
+            <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    tools:text="- Belal Khan"
+                    android:text="@{`-` + quote.author}"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/quote"
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textStyle="italic"/>
+
+            <TextView
+                    android:layout_marginTop="7dp"
+                    android:layout_below="@id/author"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
