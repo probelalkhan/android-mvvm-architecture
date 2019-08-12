@@ -10,8 +10,9 @@ import net.simplifiedcoding.mvvmsampleapp.data.network.MyApi
 import net.simplifiedcoding.mvvmsampleapp.data.network.SafeApiRequest
 import net.simplifiedcoding.mvvmsampleapp.data.preferences.PreferenceProvider
 import net.simplifiedcoding.mvvmsampleapp.util.Coroutines
-import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
+import org.threeten.bp.LocalDateTime
+import org.threeten.bp.temporal.ChronoUnit
+
 
 private val MINIMUM_INTERVAL = 6
 
@@ -29,8 +30,8 @@ class QuotesRepository(
         }
     }
 
-    suspend fun getQuotes(): LiveData<List<Quote>>{
-        return withContext(Dispatchers.IO){
+    suspend fun getQuotes(): LiveData<List<Quote>> {
+        return withContext(Dispatchers.IO) {
             fetchQuotes()
             db.getQuoteDao().getQuotes()
         }

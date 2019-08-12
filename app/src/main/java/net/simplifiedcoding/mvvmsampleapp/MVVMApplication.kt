@@ -1,6 +1,7 @@
 package net.simplifiedcoding.mvvmsampleapp
 
 import android.app.Application
+import com.jakewharton.threetenabp.AndroidThreeTen
 import net.simplifiedcoding.mvvmsampleapp.data.db.AppDatabase
 import net.simplifiedcoding.mvvmsampleapp.data.network.MyApi
 import net.simplifiedcoding.mvvmsampleapp.data.network.NetworkConnectionInterceptor
@@ -19,6 +20,11 @@ import org.kodein.di.generic.provider
 import org.kodein.di.generic.singleton
 
 class MVVMApplication : Application(), KodeinAware {
+
+    override fun onCreate() {
+        super.onCreate()
+        AndroidThreeTen.init(this)
+    }
 
     override val kodein = Kodein.lazy {
         import(androidXModule(this@MVVMApplication))
