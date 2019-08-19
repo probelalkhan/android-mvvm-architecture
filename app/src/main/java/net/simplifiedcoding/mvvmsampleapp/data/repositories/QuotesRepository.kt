@@ -10,6 +10,7 @@ import net.simplifiedcoding.mvvmsampleapp.data.network.MyApi
 import net.simplifiedcoding.mvvmsampleapp.data.network.SafeApiRequest
 import net.simplifiedcoding.mvvmsampleapp.data.preferences.PreferenceProvider
 import net.simplifiedcoding.mvvmsampleapp.util.Coroutines
+import java.lang.Exception
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
@@ -29,8 +30,8 @@ class QuotesRepository(
         }
     }
 
-    suspend fun getQuotes(): LiveData<List<Quote>>{
-        return withContext(Dispatchers.IO){
+    suspend fun getQuotes(): LiveData<List<Quote>> {
+        return withContext(Dispatchers.IO) {
             fetchQuotes()
             db.getQuoteDao().getQuotes()
         }
@@ -40,8 +41,12 @@ class QuotesRepository(
         val lastSavedAt = prefs.getLastSavedAt()
 
         if (lastSavedAt == null || isFetchNeeded(LocalDateTime.parse(lastSavedAt))) {
-            val response = apiRequest { api.getQuotes() }
-            quotes.postValue(response.quotes)
+            try {
+                val response = apiRequest { api.getQuotes() }
+                quotes.postValue(response.quotes)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 
