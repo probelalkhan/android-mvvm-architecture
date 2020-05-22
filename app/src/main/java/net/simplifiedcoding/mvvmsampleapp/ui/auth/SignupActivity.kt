@@ -30,9 +30,6 @@ class SignupActivity : AppCompatActivity(), AuthListener, KodeinAware {
         val binding: ActivitySignupBinding
                 = DataBindingUtil.setContentView(this, R.layout.activity_signup)
         val viewModel = ViewModelProviders.of(this, factory).get(AuthViewModel::class.java)
-        binding.viewmodel = viewModel
-
-        viewModel.authListener = this
 
         viewModel.getLoggedInUser().observe(this, Observer { user ->
             if(user != null){

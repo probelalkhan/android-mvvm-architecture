@@ -1,138 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
->
-    <data>
-
-        <variable
-                name="viewmodel"
-                type="net.simplifiedcoding.mvvmsampleapp.ui.auth.AuthViewModel"
-        />
-
-    </data>
-
+        xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/root_layout"
             android:layout_width="match_parent"
-            android:background="#E2E2E2"
             android:layout_height="match_parent"
+            android:background="#E2E2E2"
             tools:context=".ui.auth.LoginActivity">
 
 
         <RelativeLayout
-                android:padding="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
             <ImageView
-                    android:layout_marginTop="75dp"
                     android:id="@+id/image_view_logo"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_app_logo"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-            />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="75dp"
+                    android:background="@drawable/ic_app_logo" />
 
             <LinearLayout
                     android:id="@+id/linearLayout1"
-                    android:layout_below="@id/image_view_logo"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_view_logo"
+                    android:orientation="vertical">
 
                 <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:text="architect your app with"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" app:fontFamily="cursive"
-                        android:textColor="#465A61"/>
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="#465A61"
+                        app:fontFamily="cursive" />
 
                 <TextView
-                        android:layout_gravity="center_horizontal"
-                        android:text="MVVM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="MVVM"
+                        android:textAllCaps="false"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-                        app:fontFamily="casual" android:textStyle="bold" android:textAllCaps="false"
-                        android:typeface="monospace" android:textColor="#969EEE"/>
+                        android:textColor="#969EEE"
+                        android:textStyle="bold"
+                        android:typeface="monospace"
+                        app:fontFamily="casual" />
 
             </LinearLayout>
 
             <LinearLayout
                     android:id="@+id/linearLayout2"
-                    android:padding="18dp"
-                    android:background="#ffffff"
-                    android:layout_below="@id/linearLayout1"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayout1"
+                    android:background="#ffffff"
+                    android:orientation="vertical"
+                    android:padding="18dp">
 
                 <EditText
-                        android:text="@={viewmodel.email}"
+                        android:id="@+id/edit_text_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/edit_text_round_gray_background"
+                        android:drawableLeft="@drawable/ic_email"
+                        android:drawablePadding="16dp"
                         android:hint="belal@gmail.com"
                         android:inputType="textEmailAddress"
-                        android:drawablePadding="16dp"
-                        android:drawableLeft="@drawable/ic_email"
-                        android:background="@drawable/edit_text_round_gray_background"
-                        android:layout_width="match_parent"
-                        android:padding="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:layout_height="match_parent"/>
+                        android:padding="12dp" />
 
                 <EditText
-                        android:text="@={viewmodel.password}"
-                        android:inputType="textPassword"
-                        android:hint="password"
-                        android:drawablePadding="16dp"
-                        android:drawableLeft="@drawable/ic_lock"
-                        android:background="@drawable/edit_text_round_gray_background"
+                        android:id="@+id/edit_text_password"
                         android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="12dp"
-                        android:padding="12dp"
-                        android:layout_height="match_parent"/>
+                        android:background="@drawable/edit_text_round_gray_background"
+                        android:drawableLeft="@drawable/ic_lock"
+                        android:drawablePadding="16dp"
+                        android:hint="password"
+                        android:inputType="textPassword"
+                        android:padding="12dp" />
 
                 <TextView
-                        android:textColor="@color/colorPrimaryDark"
-                        android:layout_marginBottom="12dp"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:text="Forget Password?"
+                        android:id="@+id/text_view_forget_password"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Forget Password?"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorPrimaryDark" />
 
                 <Button
-                        android:onClick="@{viewmodel::onLoginButtonClick}"
-                        android:layout_gravity="center_horizontal"
-                        android:textAllCaps="false"
-                        android:text="Sign In"
+                        android:id="@+id/button_sign_in"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Sign In"
+                        android:textAllCaps="false" />
 
             </LinearLayout>
 
             <TextView
-                    android:layout_marginTop="12dp"
-                    android:textColor="@color/colorPrimary"
-                    android:onClick="@{viewmodel::onSignup}"
-                    android:layout_centerHorizontal="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:layout_below="@id/linearLayout2"
-                    android:textAlignment="center"
-                    android:text="Don't have an account?\nSign Up Here"
+                    android:id="@+id/text_view_sign_up"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/linearLayout2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:text="Don't have an account?\nSign Up Here"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimary" />
 
         </RelativeLayout>
 
         <ProgressBar
-                android:visibility="invisible"
                 android:id="@+id/progress_bar"
-                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:visibility="invisible" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
