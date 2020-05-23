@@ -62,6 +62,7 @@
                     android:layout_height="wrap_content">
 
                 <EditText
+                        android:id="@+id/edit_text_name"
                         android:hint="Belal Khan"
                         android:inputType="text"
                         android:drawablePadding="16dp"
@@ -73,6 +74,7 @@
                         android:layout_height="match_parent"/>
 
                 <EditText
+                        android:id="@+id/edit_text_email"
                         android:hint="belal@gmail.com"
                         android:inputType="textEmailAddress"
                         android:drawablePadding="16dp"
@@ -84,6 +86,7 @@
                         android:layout_height="match_parent"/>
 
                 <EditText
+                        android:id="@+id/edit_text_password"
                         android:inputType="textPassword"
                         android:hint="password"
                         android:drawablePadding="16dp"
@@ -95,6 +98,7 @@
                         android:layout_height="match_parent"/>
 
                 <EditText
+                        android:id="@+id/edit_text_password_confirm"
                         android:inputType="textPassword"
                         android:hint="confirm password"
                         android:drawablePadding="16dp"
@@ -106,6 +110,7 @@
                         android:layout_height="match_parent"/>
 
                 <TextView
+                        android:id="@+id/text_view_forget_password"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_marginBottom="12dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -114,6 +119,7 @@
                         android:layout_height="wrap_content"/>
 
                 <Button
+                        android:id="@+id/button_sign_up"
                         android:layout_gravity="center_horizontal"
                         android:textAllCaps="false"
                         android:text="Sign Up"
@@ -123,6 +129,7 @@
             </LinearLayout>
 
             <TextView
+                    android:id="@+id/text_view_login"
                     android:layout_marginTop="12dp"
                     android:textColor="@color/colorPrimary"
                     android:layout_centerHorizontal="true"

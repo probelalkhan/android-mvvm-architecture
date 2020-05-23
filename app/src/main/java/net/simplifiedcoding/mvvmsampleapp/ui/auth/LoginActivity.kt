@@ -44,13 +44,15 @@ class LoginActivity : AppCompatActivity(), KodeinAware {
         binding.buttonSignIn.setOnClickListener {
             loginUser()
         }
+
+        binding.textViewSignUp.setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+        }
     }
 
     private fun loginUser() {
         val email = binding.editTextEmail.text.toString().trim()
         val password = binding.editTextPassword.text.toString().trim()
-
-        //@todo validate user inputs
 
         lifecycleScope.launch {
             try {

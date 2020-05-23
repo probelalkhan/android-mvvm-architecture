@@ -10,6 +10,6 @@ data class Quote(
     val quote: String,
     val author: String,
     val thumbnail: String,
-    val created_at: String,
-    val updated_at: String
+    val created_at: String?,
+    val updated_at: String?
 )
