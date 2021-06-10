@@ -15,6 +15,6 @@ interface UserDao{
     suspend fun upsert(user: User) : Long
 
     @Query("SELECT * FROM user WHERE uid = $CURRENT_USER_ID")
-    fun getuser() : LiveData<User>
+    fun getUser() : LiveData<User>
 
 }
