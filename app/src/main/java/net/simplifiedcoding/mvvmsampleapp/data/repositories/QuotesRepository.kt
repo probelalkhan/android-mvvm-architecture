@@ -57,7 +57,7 @@ class QuotesRepository(
 
     private fun saveQuotes(quotes: List<Quote>) {
         Coroutines.io {
-            prefs.savelastSavedAt(LocalDateTime.now().toString())
+            prefs.saveLastSavedAt(LocalDateTime.now().toString())
             db.getQuoteDao().saveAllQuotes(quotes)
         }
     }

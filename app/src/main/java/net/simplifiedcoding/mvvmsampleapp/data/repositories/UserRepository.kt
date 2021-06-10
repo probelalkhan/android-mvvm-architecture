@@ -5,7 +5,6 @@ import net.simplifiedcoding.mvvmsampleapp.data.db.entities.User
 import net.simplifiedcoding.mvvmsampleapp.data.network.MyApi
 import net.simplifiedcoding.mvvmsampleapp.data.network.SafeApiRequest
 import net.simplifiedcoding.mvvmsampleapp.data.network.responses.AuthResponse
-import retrofit2.Response
 
 class UserRepository(
     private val api: MyApi,
@@ -26,6 +25,6 @@ class UserRepository(
 
     suspend fun saveUser(user: User) = db.getUserDao().upsert(user)
 
-    fun getUser() = db.getUserDao().getuser()
+    fun getUser() = db.getUserDao().getUser()
 
 }
